@@ -23,4 +23,14 @@ class Task extends Model
     public $incrementing = true;
 
     protected $guarded = ['id'];
+
+    /**
+     * Get the user that owns the Task
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

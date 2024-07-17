@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MyFirstController;
 
@@ -15,6 +16,10 @@ use App\Http\Controllers\MyFirstController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//nak list kan query yg kita gunakan
+// DB::listen(function ($event) {
+//     dump($event->sql);
+// });
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,6 +35,8 @@ Route::get('aboutus/{namakementerian}', [MyFirstController::class,'aboutus']);
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{id}', [UserController::class, 'show']);
 Route::get('/users/{id}/edit', [UserController::class, 'edit']);
+
+Route::get('tasks',[TaskController::class,'index']);
 
 Auth::routes();
 
