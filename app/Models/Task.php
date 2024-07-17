@@ -24,6 +24,10 @@ class Task extends Model
 
     protected $guarded = ['id'];
 
+    function getRouteKeyName(){
+        return 'uuid';
+    }
+
     /**
      * Get the user that owns the Task
      *
