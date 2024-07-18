@@ -32,7 +32,7 @@ Route::get('/mylaravel/{nama?}', function($nama='Amir'){
 
 Route::get('aboutus/{namakementerian}', [MyFirstController::class,'aboutus']);
 
-Route::get('/users', [UserController::class, 'index']);
+Route::get('/users', [UserController::class, 'index'])->name('tasks.index');
 Route::get('/users/{id}', [UserController::class, 'show']);
 Route::get('/users/{id}/edit', [UserController::class, 'edit']);
 
